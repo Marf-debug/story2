@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MCQ Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Quick MCQ</h1>
+  <p>Select the correct answer and click "Check"</p>
+
+  <div class="quiz">
+    <form id="quizForm">
+      <fieldset>
+        <legend>Which of the following is a pharmacy practice evaluation method?</legend>
+        <label><input type="radio" name="q1" value="A"> Random number generation</label><br>
+        <label><input type="radio" name="q1" value="B"> Chart review</label><br>
+        <label><input type="radio" name="q1" value="C"> Weather forecasting</label><br>
+        <label><input type="radio" name="q1" value="D"> Movie recommendation</label><br>
+      </fieldset>
+      <button type="button" id="checkBtn">Check</button>
+      <button type="button" id="resetBtn">Reset</button>
+    </form>
+    <div id="feedback" class="feedback" aria-live="polite"></div>
+  </div>
+
+  <p><a href="index.html">Back to main page</a></p>
+
+  <script>
+    document.getElementById('checkBtn').addEventListener('click', () => {
+      const form = document.getElementById('quizForm');
+      const feedback = document.getElementById('feedback');
+      const choice = form.q1.value;
+
+      if (!choice) {
+        feedback.textContent = 'Please select an answer.';
+        feedback.className = 'feedback incorrect';
+        return;
+      }
+
+      if (choice === 'B') {
+        feedback.textContent = 'Correct! Chart review is a valid evaluation method in pharmacy practice.';
+        feedback.className = 'feedback correct';
+      } else {
+        feedback.textContent = 'Incorrect. The correct answer is Chart review.';
+        feedback.className = 'feedback incorrect';
+      }
+    });
+
+    document.getElementById('resetBtn').addEventListener('click', () => {
+      document.getElementById('quizForm').reset();
+      const feedback = document.getElementById('feedback');
+      feedback.textContent = '';
+      feedback.className = 'feedback';
+    });
+  </script>
+</body>
+</html>

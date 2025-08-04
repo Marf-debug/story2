@@ -1,3 +1,33 @@
-body { font-family: system-ui, sans-serif; margin: 2rem; }
-h1 { color: #2c3e50; }
-button { padding: 0.5rem 1rem; font-size: 1rem; }
+body {
+  font-family: system-ui, sans-serif;
+  margin: 2rem;
+  line-height: 1.4;
+}
+h1 {
+  color: #2c3e50;
+}
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+.quiz {
+  margin-top: 1rem;
+}
+.feedback {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+.correct {
+  color: green;
+}
+.incorrect {
+  color: red;
+}
+a {
+  text-decoration: none;
+  color: #1a73e8;
+}
+a:hover {
+  text-decoration: underline;
+}
